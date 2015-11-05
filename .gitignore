@@ -1,0 +1,4 @@
+/tmp/*
+package.json
+gulpfile.js
+/node_modules
