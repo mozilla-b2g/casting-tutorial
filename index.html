@@ -3,13 +3,15 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <meta charset="utf-8">
-    <title>Cast Promotion</title>
+    <title>Send to TV</title>
 
     <!-- stylesheets of building blocks -->
+    <link rel="stylesheet" type="text/css" href="bower_components/smart-button/style.css">
     <link rel="stylesheet" type="text/css" href="style/index.css">
 
     <!-- shared libraries -->
     <script defer src="bower_components/evt/index.js"></script>
+    <script defer src="bower_components/smart-button/script.js"></script>
 
     <!-- For test purpose on phone only -->
     <script defer src="js/gaia_shared/gesture_detector.js"></script>
@@ -18,16 +20,81 @@
     <!-- Helper libraries -->
     <script defer src="js/gaia_shared/smart-screen/simple_key_navigation.js"></script>
     <script defer src="js/gaia_shared/smart-screen/key_navigation_adapter.js"></script>
+    <script defer src="js/gaia_shared/smart-screen/f_t_e_wizard.js"></script>
 
     <!-- main javascript code -->
     <script defer src="js/index.js"></script>
+
+    <!-- Shared L10n libraries -->
+    <script defer src="js/gaia_shared/l10n.js"></script>
+
+    <!-- L10n properties -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US">
+    <link rel="localization" href="locales/casting-tutorial.{locale}.properties"/>
   </head>
 
   <body>
-    <div class="slide">
-      <div class="slide-section left"></div>
-      <div class="slide-section right"></div>
-      <div class="slide-section bottom"></div>
+    <div id="slide-1" class="slide">
+      <div class="slide-section left">
+        <p class="slide-description top txt-mid" data-l10n-id="step-1-of-2"></p>
+        <p class="slide-description mid txt-large" data-l10n-id="download-android-firefox"></p>
+        <p class="slide-description bottom txt-mid" data-l10n-id="using-the-same-wifi"></p>
+      </div>
+      <div class="slide-section right">
+        <img id="slide-1-phoneImg" src="style/images/phone.png">
+      </div>
+      <div class="slide-section bottom">
+        <smart-button id="slide-1-nextButton" data-behavior="next" class="slide-button primary" type="rounded-corner-text" data-l10n-id="next"></smart-button>
+      </div>
+    </div>
+
+    <div id="slide-2" class="slide hide">
+      <div class="slide-section left">
+        <p class="slide-description top txt-mid" data-l10n-id="step-2-of-2"></p>
+        <p class="slide-description mid txt-large" data-l10n-id="send-video-to-your-tv"></p>
+        <div class="slide-description bottom txt-mid">
+          <span data-l10n-id="while-playing-a-video-tap-on-the-send-to-icon"></span>
+          <img id="slide-2-castVideoIcon" src="style/images/cast_video_icon.png">
+          <br/>
+          <span data-l10n-id="appears-on-the-addr-bar-or-on-the-video-player-to-send-video"></span>
+        </div>
+      </div>
+      <div class="slide-section right">
+        <img id="slide-2-castVideoImg" src="style/images/cast_video.png">
+      </div>
+      <div class="slide-section bottom">
+        <smart-button id="slide-2-nextButton" data-behavior="next" class="slide-button" type="rounded-corner-text" data-l10n-id="learn-how-to-send-tabs"></smart-button>
+        <smart-button id="slide-2-doneButton" data-behavior="finish" class="slide-button primary" type="rounded-corner-text" data-l10n-id="done"></smart-button>
+      </div>
+    </div>
+
+    <div id="slide-3" class="slide hide">
+      <div class="slide-section left">
+        <p class="slide-description top txt-large" data-l10n-id="send-tabs-to-your-tv"></p>
+        <div class="slide-description mid txt-mid">
+          <!-- TODO: Change to the real fennec add-on URL when the real URL is ready -->
+          <img id="slide-3-fennecAddonQRCdoeImg" src="style/images/fennec_addon_QR_code.png">
+          <span>
+            <span data-l10n-id="download-and-install-addon"></span>
+            <br/>
+            <a href="https://addons.mozilla.org/en-US/android/addon/?src=homepagebrowse">https://addons.mozilla.org/en-US/android/addon/?src=homepagebrowse</a>
+          </span>
+          <!-- TODO end-->
+        </div>
+        <p class="slide-description bottom txt-mid">
+          <span data-l10n-id="while-using-firefox-tap-on-the-send-to-icon"></span>
+          <img id="slide-3-castLinkIcon" src="style/images/cast_link_icon.png">
+          <br/>
+          <span data-l10n-id="appears-on-the-addr-bar-to-send-tabs"></span>
+        </p>
+      </div>
+      <div class="slide-section right">
+        <img id="slide-3-castWebsiteImg" src="style/images/cast_website.png">
+      </div>
+      <div class="slide-section bottom">
+        <smart-button id="slide-3-doneButton" data-behavior="finish" class="slide-button primary" type="rounded-corner-text" data-l10n-id="done"></smart-button>
+      </div>
     </div>
   </body>
 
