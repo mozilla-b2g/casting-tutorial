@@ -1,24 +1,10 @@
-'use strict';
 /* global KeyEvent */
+(function (exports) {
+'use strict';
 
-window.SmartButton = (function(win) {
-  // Extend from the HTMLButtonElement prototype
-  var proto = Object.create(HTMLButtonElement.prototype);
+function initSmartButton(button) {
 
-  proto.createdCallback = function() {
-    this.addEventListener('mousedown', this);
-    this.addEventListener('mouseup', this);
-    this.addEventListener('touchstart', this);
-    this.addEventListener('touchend', this);
-    this.addEventListener('keydown', this);
-    this.addEventListener('keyup', this);
-    this.addEventListener('focus', this);
-    this.addEventListener('blur', this);
-    this.addEventListener('transitionend', this);
-    this.tabIndex = 0;
-  };
-
-  proto.handleEvent = function(evt) {
+  function handleEvent (evt) {
     switch(evt.type) {
       case 'mousedown':
       case 'touchstart':
@@ -53,10 +39,25 @@ window.SmartButton = (function(win) {
         this.classList.remove('pressed');
         this.classList.remove('released');
         this.classList.remove('focused');
-        break;
     }
   };
 
-  // Register and return the constructor
-  return document.registerElement('smart-button', { prototype: proto });
+  button.addEventListener('mousedown', handleEvent);
+  button.addEventListener('mouseup', handleEvent);
+  button.addEventListener('touchstart', handleEvent);
+  button.addEventListener('touchend', handleEvent);
+  button.addEventListener('keydown', handleEvent);
+  button.addEventListener('keyup', handleEvent);
+  button.addEventListener('focus', handleEvent);
+  button.addEventListener('blur', handleEvent);
+  button.addEventListener('transitionend', handleEvent);
+
+  // Make sure become focusable
+  button.setAttribute('tabIndex', -1);
+
+  return button;
+}
+
+exports.initSmartButton = initSmartButton;
+
 })(window);

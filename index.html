@@ -6,12 +6,11 @@
     <title>Send to TV</title>
 
     <!-- stylesheets of building blocks -->
-    <link rel="stylesheet" type="text/css" href="bower_components/smart-button/style.css">
+    <link rel="stylesheet" type="text/css" href="style/smart-button.css">
     <link rel="stylesheet" type="text/css" href="style/index.css">
 
     <!-- shared libraries -->
     <script defer src="bower_components/evt/index.js"></script>
-    <script defer src="bower_components/smart-button/script.js"></script>
 
     <!-- For test purpose on phone only -->
     <script defer src="js/gaia_shared/gesture_detector.js"></script>
@@ -23,6 +22,7 @@
     <script defer src="js/gaia_shared/smart-screen/f_t_e_wizard.js"></script>
 
     <!-- main javascript code -->
+    <script defer src="js/smart-button.js"></script>
     <script defer src="js/index.js"></script>
 
     <!-- Shared L10n libraries -->
@@ -45,7 +45,7 @@
         <img id="slide-1-phoneImg" src="style/images/phone.png">
       </div>
       <div class="slide-section bottom">
-        <smart-button id="slide-1-nextButton" data-behavior="next" class="slide-button primary" type="rounded-corner-text" data-l10n-id="next"></smart-button>
+        <button id="slide-1-nextButton" data-behavior="next" class="slide-button primary smart-button" type="rounded-corner-text" data-l10n-id="next"></button>
       </div>
     </div>
 
@@ -64,8 +64,8 @@
         <img id="slide-2-castVideoImg" src="style/images/cast_video.png">
       </div>
       <div class="slide-section bottom">
-        <smart-button id="slide-2-nextButton" data-behavior="next" class="slide-button" type="rounded-corner-text" data-l10n-id="learn-how-to-send-tabs"></smart-button>
-        <smart-button id="slide-2-doneButton" data-behavior="finish" class="slide-button primary" type="rounded-corner-text" data-l10n-id="done"></smart-button>
+        <button id="slide-2-nextButton" data-behavior="next" class="slide-button smart-button" type="rounded-corner-text" data-l10n-id="learn-how-to-send-tabs"></button>
+        <button id="slide-2-doneButton" data-behavior="finish" class="slide-button primary smart-button" type="rounded-corner-text" data-l10n-id="done"></button>
       </div>
     </div>
 
@@ -73,14 +73,12 @@
       <div class="slide-section left">
         <p class="slide-description top txt-large" data-l10n-id="send-tabs-to-your-tv"></p>
         <div class="slide-description mid txt-mid">
-          <!-- TODO: Change to the real fennec add-on URL when the real URL is ready -->
           <img id="slide-3-fennecAddonQRCdoeImg" src="style/images/fennec_addon_QR_code.png">
           <span>
             <span data-l10n-id="download-and-install-addon"></span>
             <br/>
             <a href="https://addons.mozilla.org/en-US/android/addon/send-tab-to-tv/">https://addons.mozilla.org/en-US/android/addon/send-tab-to-tv/</a>
           </span>
-          <!-- TODO end-->
         </div>
         <p class="slide-description bottom txt-mid">
           <span data-l10n-id="while-using-firefox-tap-on-the-send-to-icon"></span>
@@ -93,7 +91,7 @@
         <img id="slide-3-castWebsiteImg" src="style/images/cast_website.png">
       </div>
       <div class="slide-section bottom">
-        <smart-button id="slide-3-doneButton" data-behavior="finish" class="slide-button primary" type="rounded-corner-text" data-l10n-id="done"></smart-button>
+        <button id="slide-3-doneButton" data-behavior="finish" class="slide-button primary smart-button" type="rounded-corner-text" data-l10n-id="done"></button>
       </div>
     </div>
   </body>
