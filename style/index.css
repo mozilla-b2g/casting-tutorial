@@ -114,6 +114,14 @@ smart-button#slide-2-nextButton {
   margin-bottom: 8rem;
 }
 
+.slide-button {
+  margin-left: 4rem;
+}
+
+.slide-button:first-child {
+  margin-left: 0;
+}
+
 #slide-3 .slide-description.mid {
   min-height: 20rem;
   margin-bottom: 4rem;
@@ -135,10 +143,6 @@ smart-button#slide-2-nextButton {
 #slide-3-castWebsiteImg {
   width: 50rem;
   height: 43.2rem;
-}
-
-#slide-2-nextButton {
-  margin-right: 1.8rem;
 }
 
 #slide-3-fennecAddonQRCdoeImg {
