@@ -19,6 +19,12 @@
     }.bind(tutorial)
   });
 
+  var keyNavAdapter = new KeyNavigationAdapter();
+  keyNavAdapter.init();
+  keyNavAdapter.on('esc-keyup', function () {
+    tutorial.goPrev();
+  });
+
   exports.tutorial = tutorial;
 
 })(window);
