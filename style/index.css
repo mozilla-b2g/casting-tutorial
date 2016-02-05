@@ -28,6 +28,10 @@ body.finish {
   opacity: 0;
 }
 
+a {
+  color: #fff;
+}
+
 .txt-mid {
   font-size: 3.8rem;
 }
