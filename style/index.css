@@ -32,6 +32,10 @@ a {
   color: #fff;
 }
 
+sup {
+  font-size: 0.5em;
+}
+
 .txt-mid {
   font-size: 3.8rem;
 }
@@ -48,7 +52,7 @@ a {
 }
 
 .slide-button#slide-2-nextButton {
-  width: 60rem;
+  width: 66rem;
 }
 
 .slide {
